@@ -12,7 +12,7 @@ def get_post(connection:Connection)->Posts:
             FROM posts;
             '''
         )
-        return [Post.model_validate(dict(post)) for post in cur]
+        return Posts(posts = [Post.model_validate(dict(post)) for post in cur])
 
 
 def insert_post(connection: Connection, post : Post):
