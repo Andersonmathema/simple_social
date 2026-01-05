@@ -7,6 +7,18 @@
 </head>
 <body>
     <h1>Simple Social Media</h1>
+    <form hx-post="/post" hx-trigger="submit" hx-target="#posts" hx-swap="innerHTML" hx-ext="json-enc">
+        <label for="">Post Title</label>
+        <input type="text" name="post_title">
+        <label for="">Post</label>
+        <input type="text" name="post_text">
+        <input type="submit">
+    </form>
+    <div id="posts" hx-trigger="load" hx-get="/posts" hx-swap="innerHTML">
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx-ext-json-enc@2.0.1/json-enc.js"></script>
 </body>
 </html>
 
